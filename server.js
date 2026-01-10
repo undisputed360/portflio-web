@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname)));
 
+// Health check endpoint for Railway
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 // Serve static files
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
