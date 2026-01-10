@@ -16,7 +16,11 @@ app.use(express.static(path.join(__dirname)));
 
 // Health check endpoint for Railway
 app.get("/health", (req, res) => {
-  res.status(200).send("OK");
+  res.status(200).json({ 
+    status: "OK", 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
 });
 
 // Serve static files
@@ -109,7 +113,13 @@ app.post("/fashion-contact", async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Portfolio server running on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
+  console.log(`Server listening on 0.0.0.0:${PORT}`);
+});
+
+server.on('error', (err) => {
+  console.error('Server error:', err);
+  process.exit(1);
 });
