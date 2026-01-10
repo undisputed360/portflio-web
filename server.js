@@ -110,7 +110,6 @@ app.post("/fashion-contact", async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Portfolio server running on http://localhost:${PORT}`);
-  console.log(`Email User: ${process.env.EMAIL_USER}`);
-  console.log(`Email Pass: ${process.env.EMAIL_PASS ? "Set" : "Not Set"}`);
+  console.log(`Portfolio server running on port ${PORT}`);
+  console.log(`Health check: http://localhost:${PORT}/health`);
 });
