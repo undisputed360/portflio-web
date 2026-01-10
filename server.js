@@ -14,13 +14,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname)));
 
-// Health check endpoint for Railway
+// Health check endpoint for Railway (placed first for immediate response)
 app.get("/health", (req, res) => {
-  res.status(200).json({ 
-    status: "OK", 
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime()
-  });
+  res.status(200).send("OK");
+});
+
+// Simple ping endpoint
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
 });
 
 // Serve static files
@@ -113,13 +114,13 @@ app.post("/fashion-contact", async (req, res) => {
 });
 
 // Start server
-const server = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, "0.0.0.0", () => {
   console.log(`Portfolio server running on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`Server listening on 0.0.0.0:${PORT}`);
 });
 
-server.on('error', (err) => {
-  console.error('Server error:', err);
+server.on("error", (err) => {
+  console.error("Server error:", err);
   process.exit(1);
 });
