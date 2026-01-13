@@ -1,0 +1,76 @@
+/* Futuristic Nano Background */
+body,
+html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #00ffe7;
+}
+
+.nano-bg {
+            background-image: url('https://www.transparenttextures.com/patterns/nano.png');
+            background-repeat: repeat;
+            min-height: 100vh;
+            padding: 2rem;
+}
+
+.axion-header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #00ffe7;
+}
+
+.axion-header h1 {
+            font-size: 3rem;
+            margin: 0;
+}
+
+.axion-main {
+            max-width: 800px;
+            margin: 2rem auto;
+}
+
+.connect-wallet {
+            text-align: center;
+            margin-bottom: 2rem;
+}
+
+.connect-wallet button {
+            background: #00ffe7;
+            color: #0f0f0f;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+}
+
+.connect-wallet button:hover {
+            background: #00c9b7;
+}
+
+.dashboard {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+}
+
+.card {
+            background: rgba(0, 255, 231, 0.05);
+            border: 1px solid #00ffe7;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+}
+
+.axion-footer {
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #00ffe7;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+}
