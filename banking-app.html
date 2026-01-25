@@ -1,346 +1,453 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SecureBank - Modern Digital Banking Platform</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f1f3a 0%, #1e3c72 50%, #2a5298 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: #0f1f3a;
-        }
+      body {
+        font-family:
+          "Poppins",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f1f3a 0%,
+          #1e3c72 50%,
+          #2a5298 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: #0f1f3a;
+      }
 
-        header {
-            background: white;
-            box-shadow: 0 10px 40px rgba(30, 60, 114, 0.12);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      header {
+        background: white;
+        box-shadow: 0 10px 40px rgba(30, 60, 114, 0.12);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        .back-btn {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
+      .back-btn {
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
 
-        .back-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(30, 60, 114, 0.3);
-        }
+      .back-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(30, 60, 114, 0.3);
+      }
 
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        box-shadow: 0 20px 60px rgba(30, 60, 114, 0.15);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Playfair Display", serif;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+        text-align: left;
+      }
+
+      .feature {
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 60, 114, 0.05) 0%,
+          rgba(42, 82, 152, 0.05) 100%
+        );
+        border-radius: 12px;
+        border: 1px solid #e1e8ed;
+        transition: all 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
+        border-color: #00d4ff;
+      }
+
+      .feature-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+
+      .feature-title {
+        font-weight: 600;
+        color: #0f1f3a;
+        margin-bottom: 8px;
+      }
+
+      .feature-desc {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .setup-section {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 60, 114, 0.08) 0%,
+          rgba(42, 82, 152, 0.08) 100%
+        );
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        border: 1px solid #e1e8ed;
+        text-align: left;
+      }
+
+      .setup-section h2 {
+        font-size: 24px;
+        color: #0f1f3a;
+        margin-bottom: 20px;
+      }
+
+      .code-block {
+        background: #1a1a2e;
+        color: #00d4ff;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-bottom: 12px;
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+      }
+
+      .code-block code {
+        display: block;
+      }
+
+      .instructions {
+        list-style: none;
+        margin: 20px 0;
+      }
+
+      .instructions li {
+        padding: 10px 0;
+        color: #666;
+        font-size: 15px;
+      }
+
+      .instructions li:before {
+        content: "✓ ";
+        color: #00d4ff;
+        font-weight: 600;
+        margin-right: 10px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 14px 32px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-family: inherit;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: #1e3c72;
+        border: 2px solid #1e3c72;
+      }
+
+      .btn-secondary:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 60, 114, 0.08) 0%,
+          rgba(42, 82, 152, 0.08) 100%
+        );
+      }
+
+      footer {
+        background: rgba(15, 31, 58, 0.9);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 32px;
         }
 
         .container {
-            max-width: 900px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.15);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.6;
+          padding: 40px 20px;
         }
 
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-            text-align: left;
-        }
-
-        .feature {
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(42, 82, 152, 0.05) 100%);
-            border-radius: 12px;
-            border: 1px solid #e1e8ed;
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
-            border-color: #00d4ff;
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .feature-title {
-            font-weight: 600;
-            color: #0f1f3a;
-            margin-bottom: 8px;
-        }
-
-        .feature-desc {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .setup-section {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.08) 0%, rgba(42, 82, 152, 0.08) 100%);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 1px solid #e1e8ed;
-            text-align: left;
-        }
-
-        .setup-section h2 {
-            font-size: 24px;
-            color: #0f1f3a;
-            margin-bottom: 20px;
-        }
-
-        .code-block {
-            background: #1a1a2e;
-            color: #00d4ff;
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin-bottom: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-        }
-
-        .code-block code {
-            display: block;
-        }
-
-        .instructions {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .instructions li {
-            padding: 10px 0;
-            color: #666;
-            font-size: 15px;
-        }
-
-        .instructions li:before {
-            content: "✓ ";
-            color: #00d4ff;
-            font-weight: 600;
-            margin-right: 10px;
+          grid-template-columns: 1fr;
         }
 
         .buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+          flex-direction: column;
         }
 
         .btn {
-            padding: 14px 32px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-family: inherit;
+          width: 100%;
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #1e3c72;
-            border: 2px solid #1e3c72;
-        }
-
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.08) 0%, rgba(42, 82, 152, 0.08) 100%);
-        }
-
-        footer {
-            background: rgba(15, 31, 58, 0.9);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            .container {
-                padding: 40px 20px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <div class="logo">🏦 SecureBank</div>
-            <a href="index.html" class="back-btn">← Back to Portfolio</a>
-        </div>
+      <div class="header-container">
+        <div class="logo">🏦 SecureBank</div>
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+      </div>
     </header>
 
     <main>
-        <div class="container">
-            <h1>SecureBank</h1>
-            <p class="subtitle">
-                A modern digital banking platform featuring secure authentication, 
-                account management, and premium user interface design.
-            </p>
+      <div class="container">
+        <h1>SecureBank</h1>
+        <p class="subtitle">
+          A modern digital banking platform featuring secure authentication,
+          account management, and premium user interface design.
+        </p>
 
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <div class="feature-title">Secure Auth</div>
-                    <div class="feature-desc">Bank-level security with encrypted passwords</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💳</div>
-                    <div class="feature-title">Card Management</div>
-                    <div class="feature-desc">Manage multiple cards in one dashboard</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💸</div>
-                    <div class="feature-title">Transfer Funds</div>
-                    <div class="feature-desc">Send money instantly and securely</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📊</div>
-                    <div class="feature-title">Transaction History</div>
-                    <div class="feature-desc">Track all your financial activities</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⚙️</div>
-                    <div class="feature-title">Settings</div>
-                    <div class="feature-desc">Customize notifications and security</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-title">Modern UI</div>
-                    <div class="feature-desc">Premium design with smooth animations</div>
-                </div>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Secure Auth</div>
+            <div class="feature-desc">
+              Bank-level security with encrypted passwords
             </div>
-
-            <div class="setup-section">
-                <h2>🚀 Getting Started</h2>
-                <p style="color: #666; margin-bottom: 20px;">
-                    SecureBank is a Next.js application. Follow these steps to run it locally:
-                </p>
-
-                <ul class="instructions">
-                    <li>Navigate to the banking-app folder in your terminal</li>
-                    <li>Run <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; color: #333;">npm install</code> to install dependencies</li>
-                    <li>Run <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; color: #333;">npm run dev</code> to start the development server</li>
-                    <li>Open <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; color: #333;">http://localhost:3000</code> in your browser</li>
-                </ul>
-
-                <h3 style="margin-top: 30px; margin-bottom: 12px; color: #0f1f3a;">Quick Commands:</h3>
-                <div class="code-block"><code>cd banking-app && npm run dev</code></div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💳</div>
+            <div class="feature-title">Card Management</div>
+            <div class="feature-desc">
+              Manage multiple cards in one dashboard
             </div>
-
-            <div style="background: #fffacd; border: 2px solid #ffd700; border-radius: 12px; padding: 20px; margin-bottom: 40px; text-align: left;">
-                <strong style="color: #b8860b;">📝 Demo Credentials:</strong>
-                <p style="color: #666; margin-top: 8px; font-size: 14px;">
-                    Create a new account or use test credentials to explore the full banking experience including dashboard, cards, transfers, and settings.
-                </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💸</div>
+            <div class="feature-title">Transfer Funds</div>
+            <div class="feature-desc">Send money instantly and securely</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📊</div>
+            <div class="feature-title">Transaction History</div>
+            <div class="feature-desc">Track all your financial activities</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⚙️</div>
+            <div class="feature-title">Settings</div>
+            <div class="feature-desc">Customize notifications and security</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <div class="feature-title">Modern UI</div>
+            <div class="feature-desc">
+              Premium design with smooth animations
             </div>
-
-            <div class="buttons">
-                <button class="btn btn-primary" onclick="alert('To run SecureBank:\n\n1. Open terminal\n2. cd banking-app\n3. npm run dev\n4. Open http://localhost:3000')">
-                    ℹ️ How to Run
-                </button>
-                <a href="https://github.com" class="btn btn-secondary">
-                    👁️ View Source Code
-                </a>
-            </div>
+          </div>
         </div>
+
+        <div class="setup-section">
+          <h2>🚀 Getting Started</h2>
+          <p style="color: #666; margin-bottom: 20px">
+            SecureBank is a Next.js application. Follow these steps to run it
+            locally:
+          </p>
+
+          <ul class="instructions">
+            <li>Navigate to the banking-app folder in your terminal</li>
+            <li>
+              Run
+              <code
+                style="
+                  background: #f0f0f0;
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  color: #333;
+                "
+                >npm install</code
+              >
+              to install dependencies
+            </li>
+            <li>
+              Run
+              <code
+                style="
+                  background: #f0f0f0;
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  color: #333;
+                "
+                >npm run dev</code
+              >
+              to start the development server
+            </li>
+            <li>
+              Open
+              <code
+                style="
+                  background: #f0f0f0;
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  color: #333;
+                "
+                >http://localhost:3000</code
+              >
+              in your browser
+            </li>
+          </ul>
+
+          <h3 style="margin-top: 30px; margin-bottom: 12px; color: #0f1f3a">
+            Quick Commands:
+          </h3>
+          <div class="code-block">
+            <code>cd banking-app && npm run dev</code>
+          </div>
+        </div>
+
+        <div
+          style="
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: left;
+          "
+        >
+          <strong style="color: #1976d2">🚀 LIVE DEPLOYMENT READY!</strong>
+          <p style="color: #555; margin-top: 8px; font-size: 14px">
+            This app is production-ready and can be deployed to Railway, Vercel,
+            or Heroku. Check the <strong>DEPLOYMENT_GUIDE.md</strong> in the
+            repository for step-by-step deployment instructions!
+          </p>
+        </div>
+
+        <div
+          style="
+            background: #fffacd;
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: left;
+          "
+        >
+          <strong style="color: #b8860b">📝 Demo Credentials:</strong>
+          <p style="color: #666; margin-top: 8px; font-size: 14px">
+            Create a new account or use test credentials to explore the full
+            banking experience including dashboard, cards, transfers, and
+            settings.
+          </p>
+        </div>
+
+        <div class="buttons">
+          <button
+            class="btn btn-primary"
+            onclick="
+              alert(
+                'To run SecureBank:\n\n1. Open terminal\n2. cd banking-app\n3. npm run dev\n4. Open http://localhost:3000',
+              )
+            "
+          >
+            ℹ️ How to Run
+          </button>
+          <a href="https://github.com" class="btn btn-secondary">
+            👁️ View Source Code
+          </a>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>SecureBank © 2026 | Built with Next.js, React & TypeScript | Premium Banking Platform</p>
+      <p>
+        SecureBank © 2026 | Built with Next.js, React & TypeScript | Premium
+        Banking Platform
+      </p>
     </footer>
-</body>
+  </body>
 </html>
