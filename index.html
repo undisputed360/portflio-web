@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta
+      name="description"
+      content="Full-stack web developer & cybersecurity specialist. Building secure, scalable applications with clean code and modern design."
+    />
+    <meta
+      name="keywords"
+      content="web developer, full-stack, cybersecurity, frontend, backend, web3"
+    />
+    <meta name="author" content="Bitrus H Amaza" />
+    <title>
+      Bitrus H Amaza | Full-Stack Developer & Cybersecurity Specialist
+    </title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="bg-animation"></div>
-
-    <div class="particles">
-      <div class="particles"></div>
-      <div class="particles"></div>
-      <div class="particles"></div>
-      <div class="particles"></div>
-      <div class="particles"></div>
-      <div class="particles"></div>
-      <div class="particles"></div>
-    </div>
     <header>
       <div class="container">
         <nav class="nav">
@@ -37,68 +38,206 @@
     <section id="Home" class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1>Welcome to My Portfolio</h1>
-          <p>
-            Hello! I'm Bitrus H Amaza — a full-stack web developer and
-            cybersecurity specialist dedicated to building and securing the
-            digital future. I blend creativity, clean code, and cutting-edge
-            security to craft web applications that are both powerful and
-            resilient.
+          <div class="hero-greeting">Welcome</div>
+          <h1>Bitrus H Amaza</h1>
+          <p class="hero-subtitle">
+            Full-Stack Developer & Cybersecurity Specialist
           </p>
-          <a href="#portfolio" class="btn">View My Work</a>
+          <p class="hero-description">
+            I build secure, scalable web applications with clean code and modern
+            design. Combining frontend excellence, backend robustness, and
+            cybersecurity best practices to create digital solutions you can
+            trust.
+          </p>
+          <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>Technical Skills & Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend Development</h3>
+            <div class="skills-list">
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Next.js</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">HTML/CSS</span>
+              <span class="skill-badge">Responsive Design</span>
+              <span class="skill-badge">UI/UX</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Backend Development</h3>
+            <div class="skills-list">
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Express.js</span>
+              <span class="skill-badge">RESTful APIs</span>
+              <span class="skill-badge">Database Design</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">Authentication</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Cybersecurity & Security</h3>
+            <div class="skills-list">
+              <span class="skill-badge">Threat Analysis</span>
+              <span class="skill-badge">Secure Coding</span>
+              <span class="skill-badge">Encryption</span>
+              <span class="skill-badge">Data Protection</span>
+              <span class="skill-badge">Compliance</span>
+              <span class="skill-badge">Web3 Security</span>
+              <span class="skill-badge">Penetration Testing</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Technologies</h3>
+            <div class="skills-list">
+              <span class="skill-badge">Git & GitHub</span>
+              <span class="skill-badge">Docker</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">Figma</span>
+              <span class="skill-badge">Linux</span>
+              <span class="skill-badge">Web3/Blockchain</span>
+              <span class="skill-badge">Agile</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <h2>My Portfolio</h2>
+        <h2>Featured Projects</h2>
+        <p class="section-subtitle">
+          A selection of my recent work demonstrating full-stack capabilities
+        </p>
         <div class="portfolio-grid">
           <div class="project">
-            <a href="demo.html" target="_blank">
+            <div class="project-image-wrapper">
+              <img src="images/project5.jpg" alt="SecureBank" />
+              <div class="project-overlay">
+                <a href="banking-app.html" target="_blank" class="project-link"
+                  >View Project →</a
+                >
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Security</span>
+              </div>
+              <h3><a href="banking-app.html" target="_blank">SecureBank</a></h3>
+              <p>
+                Modern digital banking platform featuring secure authentication,
+                account management, transaction history, and premium interface
+                design. Built with Next.js for scalability and security best
+                practices.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-image-wrapper">
+              <img src="images/project2.jpg" alt="BHA Cyberspace" />
+              <div class="project-overlay">
+                <a href="cyber.html" target="_blank" class="project-link"
+                  >View Project →</a
+                >
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">HTML/CSS</span>
+              </div>
+              <h3><a href="cyber.html" target="_blank">BHA Cyberspace</a></h3>
+              <p>
+                Professional cybersecurity firm website showcasing threat
+                intelligence, penetration testing, incident response, and
+                compliance services with modern design.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-image-wrapper">
               <img src="images/project1.jpg" alt="Web3 Demo Site" />
-            </a>
-            <h3><a href="demo.html" target="_blank">Web3 Demo Site</a></h3>
-            <p>
-              A futuristic Web3 platform demo showcasing decentralized features,
-              blockchain integration, and modern UI design.
-            </p>
+              <div class="project-overlay">
+                <a href="demo.html" target="_blank" class="project-link"
+                  >View Project →</a
+                >
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Web3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Innovation</span>
+              </div>
+              <h3><a href="demo.html" target="_blank">Web3 Demo</a></h3>
+              <p>
+                Futuristic Web3 platform demonstrating decentralized features,
+                blockchain integration, and modern UI design principles for
+                next-generation digital experiences.
+              </p>
+            </div>
           </div>
           <div class="project">
-            <img src="images/project2.jpg" alt="BHA Cyberspace" />
-            <h3><a href="cyber.html" target="_blank">BHA Cyberspace</a></h3>
-            <p>
-              A professional cybersecurity company website offering threat
-              intelligence, penetration testing, incident response, and
-              compliance services.
-            </p>
+            <div class="project-image-wrapper">
+              <img src="images/project3.jpg" alt="Elegant Threads" />
+              <div class="project-overlay">
+                <a href="fashion.html" target="_blank" class="project-link"
+                  >View Project →</a
+                >
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">E-Commerce</span>
+                <span class="tag">Design</span>
+                <span class="tag">UX</span>
+              </div>
+              <h3>
+                <a href="fashion.html" target="_blank">Elegant Threads</a>
+              </h3>
+              <p>
+                Luxury fashion tailoring brand website showcasing bespoke
+                collections, craftsmanship, and elegant design with premium user
+                experience.
+              </p>
+            </div>
           </div>
           <div class="project">
-            <img src="images/project3.jpg" alt="Elegant Threads" />
-            <h3><a href="fashion.html" target="_blank">Elegant Threads</a></h3>
-            <p>
-              A luxury fashion tailoring brand website showcasing bespoke
-              collections, craftsmanship, and elegant design.
-            </p>
+            <div class="project-image-wrapper">
+              <img src="images/project4.jpg" alt="Axion" />
+              <div class="project-overlay">
+                <a href="axion.html" target="_blank" class="project-link"
+                  >View Project →</a
+                >
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">SaaS</span>
+                <span class="tag">Modern UI</span>
+                <span class="tag">Startup</span>
+              </div>
+              <h3><a href="axion.html" target="_blank">Axion</a></h3>
+              <p>
+                Cutting-edge tech startup website highlighting innovative
+                solutions, product features, and industry expertise for
+                forward-thinking organizations.
+              </p>
+            </div>
           </div>
-          <div class="project">
-            <img src="mm" alt="Axion" />
-            <h3><a href="axion.html" target="_blank">Axion</a></h3>
-            <p>
-              A cutting-edge tech startup website highlighting innovative
-              solutions, product features, and industry expertise.
-            </p>
-          </div>
-          <div class="project">
-            <img src="images/project5.jpg" alt="SecureBank" />
-            <h3><a href="banking-app.html" target="_blank">SecureBank</a></h3>
-            <p>
-              A modern digital banking platform built with Next.js featuring
-              secure authentication, account management, card management,
-              transaction history, and premium user interface design.
-            </p>
-          </div>
-          <!-- Add more projects as needed -->
         </div>
       </div>
     </section>
@@ -108,114 +247,216 @@
         <h2>About Me</h2>
 
         <div class="about-content">
-          <p>
-            Hello! I'm Bitrus H Amaza — a full-stack web developer and
-            cybersecurity specialist with a mission to build and secure the
-            digital future. I thrive at the intersection of creativity, code,
-            and security, building web applications that are both powerful and
-            protected.
+          <p class="about-intro">
+            I'm Bitrus H Amaza — a full-stack web developer and cybersecurity
+            specialist with a mission to build and secure the digital future. I
+            thrive at the intersection of creativity, clean code, and security,
+            crafting web applications that are both powerful and protected.
           </p>
 
-          <h3>What I Do</h3>
-          <ul class="services-list">
-            <li>
-              <strong>Frontend Development</strong> – Crafting clean,
-              responsive, and user-friendly interfaces that bring ideas to life.
-            </li>
-            <li>
-              <strong>Backend Development</strong> – Building robust, scalable
-              servers and databases to power seamless digital experiences.
-            </li>
-            <li>
-              <strong>Cybersecurity</strong> – Ensuring every project is secure
-              from the ground up, safeguarding data and building trust.
-            </li>
-          </ul>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>What I Do</h3>
+              <ul class="services-list">
+                <li>
+                  <strong>Frontend Development</strong> – Crafting responsive,
+                  user-friendly interfaces with modern frameworks and best
+                  practices.
+                </li>
+                <li>
+                  <strong>Backend Development</strong> – Building robust,
+                  scalable servers and databases for seamless digital
+                  experiences.
+                </li>
+                <li>
+                  <strong>Cybersecurity</strong> – Ensuring projects are secure
+                  from the ground up, safeguarding data and building trust.
+                </li>
+              </ul>
+            </div>
 
-          <h3>My Journey</h3>
-          <p>
-            My path started with a deep curiosity for technology and a strong
-            skepticism toward unsecured systems. This led me from exploring Web3
-            and DeFi to founding BHACYBERSPACE, where I focus on cybersecurity
-            education and digital protection. Today, I merge these insights into
-            every line of code I write — whether I'm developing a dynamic web
-            platform or fortifying it against threats.
-          </p>
+            <div class="about-card">
+              <h3>My Approach</h3>
+              <p>
+                I believe great digital products should be functional,
+                beautiful, and secure. As a full-stack developer with a
+                cybersecurity mindset, I don't just build — I build with
+                awareness. From frontend to backend, I ensure performance,
+                usability, and security are never an afterthought.
+              </p>
+            </div>
 
-          <h3>Why Work With Me</h3>
-          <p>
-            I believe great digital products should be functional, beautiful,
-            and safe. As a full-stack developer with a cybersecurity mindset, I
-            don't just build — I build with awareness. From the frontend to the
-            backend, I ensure performance, usability, and security are never an
-            afterthought.
-          </p>
+            <div class="about-card">
+              <h3>My Journey</h3>
+              <p>
+                My path started with curiosity about technology and skepticism
+                toward unsecured systems. This led me from exploring Web3 and
+                DeFi to founding BHACYBERSPACE, where I focus on cybersecurity
+                education and digital protection. Today, I merge these insights
+                into every line of code I write.
+              </p>
+            </div>
 
-          <h3>Beyond Code</h3>
-          <p>
-            When I'm not developing or securing systems, I'm actively engaging
-            with the tech community, sharing insights on Web3, DeFi, and
-            cybersecurity — always learning, always building.
-          </p>
-
-          <p class="closing-statement">
-            Let's connect if you're looking for a developer who cares as much
-            about security as they do about clean code and great design.
-            Together, we can create something both innovative and trustworthy.
-          </p>
-
-          <p class="location">
-            Based in Nigeria · Open for collaborations and meaningful projects
-          </p>
+            <div class="about-card">
+              <h3>Beyond Code</h3>
+              <p>
+                When I'm not developing or securing systems, I'm engaging with
+                the tech community, sharing insights on Web3, DeFi, and
+                cybersecurity. Always learning, always building, always
+                improving.
+              </p>
+              <p class="about-highlight">
+                <strong
+                  >Based in Nigeria · Open for collaborations and meaningful
+                  projects</strong
+                >
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Contact Me</h2>
-        <p>Get in touch!</p>
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" placeholder="Message" required></textarea>
-          <button type="submit" class="btn">Send</button>
-        </form>
-        <div id="formMessage"></div>
+        <h2>Let's Work Together</h2>
+        <p class="section-subtitle">
+          Have a project in mind? I'd love to hear about it.
+        </p>
 
-        <div class="socials">
-          <h3>Connect With Me</h3>
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/bitrus-h-amaza-773296255"
-              target="_blank"
-              class="social-link linkedin"
-              title="LinkedIn"
-            >
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://www.facebook.com/bitrush.amaza.7"
-              target="_blank"
-              class="social-link facebook"
-              title="Facebook"
-            >
-              <span>Facebook</span>
-            </a>
-            <a
-              href="https://x.com/BitrusH82393"
-              target="_blank"
-              class="social-link twitter"
-              title="X (Twitter)"
-            >
-              <span>X</span>
-            </a>
+        <div class="contact-wrapper">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          <div id="formMessage"></div>
+
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <div class="info-item">
+              <strong>Email:</strong>
+              <p>
+                <a href="mailto:contact@example.com">contact@example.com</a>
+              </p>
+            </div>
+            <div class="info-item">
+              <strong>Location:</strong>
+              <p>Nigeria</p>
+            </div>
+            <div class="info-item">
+              <strong>Connect:</strong>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/bitrus-h-amaza-773296255"
+                  target="_blank"
+                  class="social-link linkedin"
+                  title="LinkedIn"
+                  >LinkedIn</a
+                >
+                <a
+                  href="https://x.com/BitrusH82393"
+                  target="_blank"
+                  class="social-link twitter"
+                  title="X (Twitter)"
+                  >X</a
+                >
+                <a
+                  href="https://www.facebook.com/bitrush.amaza.7"
+                  target="_blank"
+                  class="social-link facebook"
+                  title="Facebook"
+                  >Facebook</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Bitrus H Amaza</h4>
+            <p>Full-Stack Developer & Cybersecurity Specialist</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li>Full-Stack Development</li>
+              <li>Web Security</li>
+              <li>UI/UX Design</li>
+              <li>Cybersecurity Consulting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Bitrus H Amaza. All rights reserved.</p>
+          <p>Crafted with code, security, and attention to detail.</p>
+        </div>
+      </div>
+    </footer>
+
     <script>
+      // Smooth scroll navigation highlight
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#" && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to header
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
       // Contact form submission
       document
         .getElementById("contactForm")
@@ -239,16 +480,23 @@
 
             if (result.success) {
               messageDiv.innerHTML =
-                '<p style="color: #00ff80;">' + result.message + "</p>";
+                '<p style="color: #4caf50; font-weight: 600; padding: 12px; background: #e8f5e9; border-radius: 6px; border-left: 4px solid #4caf50;">' +
+                result.message +
+                "</p>";
               this.reset();
+              setTimeout(() => {
+                messageDiv.innerHTML = "";
+              }, 5000);
             } else {
               messageDiv.innerHTML =
-                '<p style="color: #ff6b6b;">' + result.message + "</p>";
+                '<p style="color: #d32f2f; font-weight: 600; padding: 12px; background: #ffebee; border-radius: 6px; border-left: 4px solid #d32f2f;">' +
+                result.message +
+                "</p>";
             }
           } catch (error) {
             console.error("Error:", error);
             document.getElementById("formMessage").innerHTML =
-              '<p style="color: #ff6b6b;">Failed to send message. Please try again.</p>';
+              '<p style="color: #d32f2f; font-weight: 600; padding: 12px; background: #ffebee; border-radius: 6px; border-left: 4px solid #d32f2f;">Failed to send message. Please try again.</p>';
           }
         });
     </script>
