@@ -22,7 +22,12 @@
     <header>
       <div class="container">
         <nav class="nav">
-          <a href="#" class="logo">
+          <a
+            href="#"
+            class="logo"
+            id="logoTrigger"
+            aria-label="Open logo preview"
+          >
             <img src="images/logo.png" alt="Logo" />
           </a>
           <ul>
@@ -375,6 +380,25 @@
       </div>
     </section>
 
+    <div class="logo-modal" id="logoModal" aria-hidden="true">
+      <div class="logo-modal-backdrop" id="logoModalBackdrop"></div>
+      <div
+        class="logo-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Logo preview"
+      >
+        <button
+          class="logo-modal-close"
+          id="logoModalClose"
+          aria-label="Close logo preview"
+        >
+          ×
+        </button>
+        <img src="images/logo.png" alt="Large logo preview" />
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -465,6 +489,34 @@
       });
 
       // Contact form submission
+      const logoTrigger = document.getElementById("logoTrigger");
+      const logoModal = document.getElementById("logoModal");
+      const logoModalBackdrop = document.getElementById("logoModalBackdrop");
+      const logoModalClose = document.getElementById("logoModalClose");
+
+      const openLogoModal = () => {
+        logoModal.classList.add("active");
+        logoModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeLogoModal = () => {
+        logoModal.classList.remove("active");
+        logoModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      logoTrigger?.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLogoModal();
+      });
+
+      logoModalBackdrop?.addEventListener("click", closeLogoModal);
+      logoModalClose?.addEventListener("click", closeLogoModal);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLogoModal();
+      });
+
       document
         .getElementById("contactForm")
         .addEventListener("submit", async function (e) {

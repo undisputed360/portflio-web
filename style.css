@@ -72,9 +72,88 @@ header {
      padding: 16px 0;
 }
 
+.logo {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: transform .25s ease, filter .25s ease;
+}
+
+.logo:hover {
+     transform: scale(1.04);
+     filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.35));
+}
+
 .logo img {
      height: 42px;
+     width: auto;
+     object-fit: contain;
      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.35));
+     transition: transform .25s ease;
+}
+
+.logo:hover img {
+     transform: scale(1.03);
+}
+
+.logo-modal {
+     position: fixed;
+     inset: 0;
+     z-index: 200;
+     display: none;
+     align-items: center;
+     justify-content: center;
+     padding: 24px;
+}
+
+.logo-modal.active {
+     display: flex;
+}
+
+.logo-modal-backdrop {
+     position: absolute;
+     inset: 0;
+     background: rgba(2, 6, 23, 0.84);
+     backdrop-filter: blur(8px);
+     animation: fadeIn .25s ease;
+}
+
+.logo-modal-content {
+     position: relative;
+     width: min(92vw, 760px);
+     max-height: 90vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: rgba(2, 8, 24, 0.95);
+     border: 1px solid var(--border);
+     border-radius: 24px;
+     padding: 24px;
+     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+     animation: zoomIn .25s ease;
+}
+
+.logo-modal-content img {
+     width: 100%;
+     max-width: 620px;
+     height: auto;
+     object-fit: contain;
+     border-radius: 16px;
+}
+
+.logo-modal-close {
+     position: absolute;
+     top: 12px;
+     right: 12px;
+     width: 42px;
+     height: 42px;
+     border: none;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.1);
+     color: white;
+     font-size: 1.5rem;
+     cursor: pointer;
 }
 
 .nav ul {
@@ -530,9 +609,56 @@ header {
      }
 }
 
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+     }
+
+     to {
+          opacity: 1;
+     }
+}
+
+@keyframes zoomIn {
+     from {
+          opacity: 0;
+          transform: scale(0.92);
+     }
+
+     to {
+          opacity: 1;
+          transform: scale(1);
+     }
+}
+
+@media (max-width:1024px) {
+     .container {
+          max-width: 100%;
+     }
+
+     .hero-content {
+          padding: 32px;
+     }
+
+     .portfolio-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+     }
+}
+
 @media (max-width:768px) {
+     .nav {
+          flex-wrap: wrap;
+          gap: 12px;
+     }
+
      .nav ul {
           gap: 14px;
+          flex-wrap: wrap;
+          justify-content: center;
+     }
+
+     .hero {
+          padding: 120px 0 80px;
      }
 
      .hero-content {
@@ -559,5 +685,88 @@ header {
      .about,
      .contact {
           padding: 90px 0;
+     }
+
+     .footer-content {
+          grid-template-columns: 1fr;
+     }
+
+     .logo-modal-content {
+          padding: 18px;
+     }
+}
+
+@media (max-width:480px) {
+     .container {
+          padding: 0 16px;
+     }
+
+     .nav {
+          padding: 12px 0;
+     }
+
+     .logo img {
+          height: 34px;
+     }
+
+     .hero-content h1 {
+          font-size: clamp(2.1rem, 8vw, 2.8rem);
+     }
+
+     .hero-subtitle {
+          font-size: 1.05rem;
+     }
+
+     .hero-description {
+          font-size: 0.95rem;
+     }
+
+     .skill-category,
+     .project,
+     .about-card,
+     .contact-form,
+     .contact-info {
+          padding: 22px;
+     }
+
+     .logo-modal {
+          padding: 14px;
+     }
+
+     .logo-modal-close {
+          width: 36px;
+          height: 36px;
+     }
+}
+
+@media (min-width:1440px) {
+     .container {
+          max-width: 1400px;
+     }
+
+     .hero-content {
+          max-width: 960px;
+          padding: 48px;
+     }
+
+     .portfolio-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+     }
+}
+
+@media (min-width:1920px) {
+     body {
+          font-size: 18px;
+     }
+
+     .hero-content {
+          max-width: 1120px;
+          padding: 56px;
+     }
+
+     .skills-grid,
+     .about-grid,
+     .portfolio-grid {
+          gap: 36px;
      }
 }
