@@ -43,32 +43,49 @@ app.get("/fashion", (req, res) => {
 
 // Contact form submission
 app.post("/contact", async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
-  // Create transporter for email
+  const senderEmail = process.env.EMAIL_USER;
+  const senderPassword = process.env.EMAIL_PASS;
+  const recipientEmail = process.env.EMAIL_TO || senderEmail;
+
+  if (!senderEmail || !senderPassword) {
+    console.error("Email delivery is not configured.");
+    return res.status(500).json({
+      success: false,
+      message:
+        "Email delivery is not configured yet. Please add your Gmail address and app password to the .env file.",
+    });
+  }
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: senderEmail,
+      pass: senderPassword,
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `Portfolio Contact Form - Message from ${name}`,
+    from: `Portfolio Contact <${senderEmail}>`,
+    to: recipientEmail,
+    replyTo: email,
+    subject: subject
+      ? `Portfolio Contact: ${subject}`
+      : `Portfolio Contact Form - Message from ${name}`,
     text: `
 Name: ${name}
 Email: ${email}
+Subject: ${subject || "N/A"}
 Message: ${message}
         `,
     html: `
 <h3>New Contact Form Submission</h3>
 <p><strong>Name:</strong> ${name}</p>
 <p><strong>Email:</strong> ${email}</p>
+<p><strong>Subject:</strong> ${subject || "N/A"}</p>
 <p><strong>Message:</strong></p>
 <p>${message}</p>
         `,
